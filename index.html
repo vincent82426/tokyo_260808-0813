@@ -41,15 +41,25 @@
     .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
 
     header {
-      padding: 52px 0 32px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      min-height: 320px;
+      padding: 58px 0 38px;
       color: white;
-      background: linear-gradient(135deg, #1e2b3d 0%, #34536f 58%, #bd665a 145%);
+      background:
+        linear-gradient(90deg, rgba(11, 19, 30, .14) 0%, rgba(11, 19, 30, .28) 42%, rgba(11, 19, 30, .82) 72%, rgba(11, 19, 30, .92) 100%),
+        linear-gradient(0deg, rgba(11, 19, 30, .72) 0%, rgba(11, 19, 30, .08) 68%),
+        url("https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=2400&q=85") 34% 55% / cover no-repeat;
       box-shadow: var(--shadow);
     }
+    header > .wrap { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
     .eyebrow { margin: 0 0 8px; color: #dbe8f2; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; }
     h1 { margin: 0; font-size: clamp(32px, 6vw, 58px); line-height: 1.12; letter-spacing: -.035em; }
     .subtitle { margin: 14px 0 0; color: #edf4f8; font-size: clamp(15px, 2vw, 19px); }
-    .header-meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+    .header-meta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 9px; margin-top: 24px; }
+    .header-credit { margin: 10px 0 0; color: rgba(255,255,255,.72); font-size: 10px; }
+    .header-credit a { color: inherit; }
     .pill { display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; }
     header .pill { color: white; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); }
 
@@ -186,7 +196,7 @@
     }
     @media (max-width: 560px) {
       .wrap { width: min(100% - 20px, 1120px); }
-      header { padding-top: 38px; }
+      header { min-height: 300px; padding-top: 38px; background-position: center, center, 29% center; }
       .summary-grid, .checklist { grid-template-columns: 1fr; }
       .day-head { grid-template-columns: 1fr; gap: 7px; padding: 18px; }
       .day-head > .status { grid-column: auto; }
@@ -242,6 +252,7 @@
         <span class="pill">✈️ 酷航｜桃園 ⇄ 成田T1</span>
         <span class="pill">行程更新版 2026.07.15</span>
       </div>
+      <p class="header-credit">背景照片：<a href="https://unsplash.com/photos/tokyo-tower-illuminated-at-dusk-with-city-skyline-IocJwyqRv3M" target="_blank" rel="noopener noreferrer">Louie Martinez / Unsplash</a></p>
     </div>
   </header>
 
